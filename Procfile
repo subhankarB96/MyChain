@@ -1,0 +1,1 @@
+web: gunicorn MyChain.wsgi --log-file -
