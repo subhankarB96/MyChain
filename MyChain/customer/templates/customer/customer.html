@@ -1,0 +1,27 @@
+{% extends 'customer/base.html' %}
+{% block body %}
+<!--form start-->
+<div class="container m-5">
+  <form class='a mx-2' action="" method="post">{% csrf_token %}
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" class="form-control" name='name'id="exampleFormControlInput1" placeholder="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">product_id</label>
+      <input type="text" class="form-control" name='product_id' id="exampleFormControlInput1" placeholder="p_id:12421">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Product_quantity</label>
+      <input type="text" class="form-control" name='Product_quantity' id="exampleFormControlInput1" placeholder="eg:110kg">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" name='Description' id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-secondary">submit</button>
+  </form>
+</div>
+<!--form ends-->
+
+{% endblock  %}

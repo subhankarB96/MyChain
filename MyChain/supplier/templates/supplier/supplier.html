@@ -1,0 +1,55 @@
+{% extends 'supplier/base.html' %}
+{% block body %}
+<!--form start-->
+<div class="container ml-6 mt-4" style="margin-left:480px;">
+<h1><span class="badge badge-secondary">Supplier {{suppliername}}</span></h1>
+{% comment %} <h3 >Supplier {{rcrd_list.supplier_name}}</h3> {% endcomment %}
+  <div class='row'>
+    <form class='a w-25 mr-4' action="" method="post">{% csrf_token %}
+          <h2>supplied list</h2>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">SupplierName</label>
+        <input type="text" class="form-control" name='name'id="exampleFormControlInput1" placeholder="name">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">product_id</label>
+        <input type="text" class="form-control" name='product_id' id="exampleFormControlInput1" placeholder="p_id:12421">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Product_quantity</label>
+        <input type="text" class="form-control" name='Product_quantity' id="exampleFormControlInput1" placeholder="eg:110kg">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea class="form-control" name='Description' id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-secondary">submit</button>
+    </form>
+    <div class="card  " style="width: 18rem;">
+      <div class="card-body">
+          <h3 class="card-title">Required list</h3>
+          <p class="card-text">
+            
+              {% for i in rcrd_list %}
+              <ul>
+                <li style="color:red">Product_id</li>{{ i.product_id }}
+                <li style="color:red">Product_name</li>{{ i.Product_name }}
+                <li style="color:red">Product_quantity</li>{{ i.product_quantity }}
+                <li style="color:red">description</li>{{ i.description }}
+              </ul>
+              {% endfor %}  
+          
+          </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!--form ends-->
+
+{% endblock body %}
+
